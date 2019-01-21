@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+
+
+{{ client }}
+
+<h1> {{ client.client_fullname }} </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}

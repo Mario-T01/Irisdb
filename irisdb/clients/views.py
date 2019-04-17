@@ -10,10 +10,8 @@ from django.views import generic
 
 
 class IndexView(generic.ListView):
-    tempalte_name = 'clients/index.html'
-    content_object_name = 'latest_client_list'
-
-    def get_queryset(self):
-        """Return the last five created clients."""
-
-        return Client.objects.order_by('-created_date')[:5]
+	  template_name = 'clients/index.html'
+	  context_object_name = 'client_list'
+	  
+	  def get_queryset(self):
+	  	 return Client.objects.order_by('-created_date')[:3]

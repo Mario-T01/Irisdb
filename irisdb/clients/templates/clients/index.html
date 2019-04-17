@@ -4,8 +4,14 @@
 <meta charset="utf-8"/>
 
 
-{{ client }}
+{% if client_list %}
+   <ul>
+   {% for client in client_list %}
 
-<h1> {{ client.client_fullname }} </h1>
+          <li> <p> {{ client.last_name }}, {{ client.first_name }}</p></li>
+   {% endfor %}
+   </ul> 
+{% else %}
+    <p> No clients are available.</p>
+{% endif %}
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}

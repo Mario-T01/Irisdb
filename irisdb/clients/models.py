@@ -11,14 +11,11 @@ class Client(models.Model):
     last_name = models.CharField(max_length=15)
     created_date = models.DateTimeField('date created')
     def __str__(self):
-        return self.client_firstname
+        # typo error found change from firstname to first_name 
+        return self.first_name
     def was_created_recently(self):
         return self.created_date >= timezone.now()
         datetime.timedelta(days=1)
-    #def fullname(self):
-    #    client_fullname = CONCAT(client_firstname, ' ',client_lastname)
-        #created_date = models.DateTimeField('date created')
-    #    return self.client_fullname
 
 
 class Referred_by(models.Model):

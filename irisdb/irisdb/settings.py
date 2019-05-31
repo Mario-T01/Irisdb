@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'irisdb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',
-        'NAME':'clients',
+        'NAME':'Clients',
         'USER':'admin',
         'PASSWORD':'admin123',
         'HOST':'localhost',

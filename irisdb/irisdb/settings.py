@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=1yw8jk!04s9#!0e@fswjp-3%-6-7xu5wkn@(27kt4noajf5co'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [*]
 
@@ -52,6 +52,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'irisdb.urls'
 
+# added "os.path.join(BASE_DIR, 'templates')" in  dirs, path point to the templates in the curret directory 
 TEMPLATES = [
     {
         'BACKEND':'django.template.backends.django.DjangoTemplates',
@@ -73,11 +74,11 @@ WSGI_APPLICATION = 'irisdb.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
+# Made changes for the database we "share" admin as user and admin123 as pass clients had to be lower case for me 
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',
-        'NAME':'Clients',
+        'NAME':'clients',
         'USER':'admin',
         'PASSWORD':'admin123',
         'HOST':'localhost',

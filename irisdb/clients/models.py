@@ -19,7 +19,6 @@ class Client(models.Model):
     class Meta:
         ordering = ('first_name',)
 
-
 class Referred_by(models.Model):
     Client_info = models.ForeignKey(Client, on_delete=models.CASCADE)
     referred_by_opts = models.CharField(max_length=10)

@@ -9,6 +9,19 @@
     <!-- for each client in the list of three names out put firt and last -->
    {% for client in client_list %}
 
+
+{% if client_list %}
+   <ul>
+   {% for client in client_list %}
+
+          <li> <p> {{ client.last_name }}, {{ client.first_name }}</p></li>
+   {% endfor %}
+   </ul> 
+{% else %}
+    <p> No clients are available.</p>
+{% endif %}
+
+=======
           <li> <p> {{ client.last_name }}, {{ client.first_name }}</p></li>
    {% endfor %}
    </ul> 

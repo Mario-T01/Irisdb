@@ -7,16 +7,17 @@ from django.utils import timezone
 
 
 class Client(models.Model):
-    first_name = models.CharField(max_length=15)
-    last_name = models.CharField(max_length=15)
-    created_date = models.DateTimeField('date created')
+    first_name = models.CharField(max_length=15, blank=False, default='')
+    last_name = models.CharField(max_length=15, blank=False, default='')
+    created_date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        # typo error found change from firstname to first_name 
         return self.first_name
     def was_created_recently(self):
         return self.created_date >= timezone.now()
         datetime.timedelta(days=1)
 
+    class Meta:
+        ordering = ('first_name',)
 
 class Referred_by(models.Model):
     Client_info = models.ForeignKey(Client, on_delete=models.CASCADE)

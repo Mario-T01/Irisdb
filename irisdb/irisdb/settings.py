@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'irisdb.urls'
 
-# added "os.path.join(BASE_DIR, 'templates')" in  dirs, path point to the templates in the curret directory 
+# added "os.path.join(BASE_DIR, 'templates')" in  dirs, path point to the templates in the curret directory
 TEMPLATES = [
     {
         'BACKEND':'django.template.backends.django.DjangoTemplates',
@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'irisdb.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-# Made changes for the database we "share" admin as user and admin123 as pass clients had to be lower case for me 
+# Made changes for the database we "share" admin as user and admin123 as pass clients had to be lower case for me
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',

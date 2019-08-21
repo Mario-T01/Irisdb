@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig',
     'clients.apps.ClientsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'irisdb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',
-        'NAME':'clients',
-        'USER':'admin',
+        'NAME':'postgres',
+        'USER':'postgres',
         'PASSWORD':'admin123',
         'HOST':'localhost',
-        'PORT':'5432'
+        'PORT':'5432',
 
     }
 }
